@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
 import { Badge } from '@/components/ui/badge'
-import { name } from 'assert'
 
 interface Props {
   _id: number
