@@ -12,6 +12,7 @@ import AllAnswers from '@/components/shared/AllAnswers'
 import Votes from '@/components/shared/Votes'
 
 const page = async ({ params, searchParams }: any) => {
+  console.log('問題更新拉')
   const { userId: clerkId } = auth()
 
   let mongoUser
@@ -44,7 +45,7 @@ const page = async ({ params, searchParams }: any) => {
 
           <div className="flex justify-end">
             <Votes
-              type="question"
+              type="Question"
               itemId={JSON.stringify(result._id)}
               userId={JSON.stringify(mongoUser?._id)}
               upvotes={result.upvotes.length}
@@ -99,14 +100,14 @@ const page = async ({ params, searchParams }: any) => {
 
       <AllAnswers
         questionId={result._id}
-        userId={JSON.stringify(mongoUser._id)}
+        userId={JSON.stringify(mongoUser?._id)}
         totalAnswers={result.answers.length}
       />
 
       <Answer
         question={result.content}
         questionId={JSON.stringify(result._id)}
-        authorId={JSON.stringify(mongoUser._id)}
+        authorId={JSON.stringify(mongoUser?._id)}
       />
     </>
   )
