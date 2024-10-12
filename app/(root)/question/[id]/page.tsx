@@ -12,7 +12,6 @@ import AllAnswers from '@/components/shared/AllAnswers'
 import Votes from '@/components/shared/Votes'
 
 const page = async ({ params, searchParams }: any) => {
-  console.log('問題更新拉')
   const { userId: clerkId } = auth()
 
   let mongoUser
