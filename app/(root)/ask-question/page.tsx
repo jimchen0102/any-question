@@ -10,9 +10,7 @@ const Page = async () => {
     redirect('/sign-in')
   }
 
-  const mongoUser = await getUserById({ userId: '123456789' })
-
-  console.log(mongoUser)
+  const mongoUser = await getUserById({ userId })
 
   return (
     <div>
