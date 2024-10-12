@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { Editor } from '@tinymce/tinymce-react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -19,9 +19,13 @@ import { Input } from '../ui/input'
 import { Badge } from '../ui/badge'
 import { QuestionsSchema } from '@/lib/validations'
 import Image from 'next/image'
+import { createQuestion } from '@/lib/actions/question.action'
+
+const type: any = 'create'
 
 const Question = () => {
   const editorRef = useRef(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const form = useForm<z.infer<typeof QuestionsSchema>>({
     resolver: zodResolver(QuestionsSchema),
@@ -32,8 +36,15 @@ const Question = () => {
     },
   })
 
-  function onSubmit(values: z.infer<typeof QuestionsSchema>) {
-    console.log(values)
+  const onSubmit = async (values: z.infer<typeof QuestionsSchema>) => {
+    setIsSubmitting(true)
+
+    try {
+      await createQuestion(values)
+    } catch (error) {
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleInputKeyDown = (
@@ -115,6 +126,8 @@ const Question = () => {
                     // @ts-ignore
                     editorRef.current = editor
                   }}
+                  onBlur={field.onBlur}
+                  onEditorChange={(content) => field.onChange(content)}
                   initialValue=""
                   init={{
                     height: 350,
@@ -200,7 +213,17 @@ const Question = () => {
           )}
         />
 
-        <Button type="submit">Submit</Button>
+        <Button
+          type="submit"
+          className="primary-gradient w-fit !text-light-900"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? (
+            <>{type === 'edit' ? 'Editing...' : 'Posting...'}</>
+          ) : (
+            <>{type === 'edit' ? 'Edit Question' : 'Ask a Question'}</>
+          )}
+        </Button>
       </form>
     </Form>
   )
