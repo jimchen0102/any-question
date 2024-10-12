@@ -76,7 +76,7 @@ export async function POST(req: Request) {
   if (eventType === 'user.updated') {
     const {
       id,
-      email_addresses: emailAddress,
+      email_addresses: emailAddresses,
       image_url: imageUrl,
       username,
       first_name: firstName,
@@ -88,7 +88,7 @@ export async function POST(req: Request) {
       updateData: {
         name: `${firstName}${lastName ? ` ${lastName}` : ''}`,
         username: username!,
-        email: emailAddress[0].email_address,
+        email: emailAddresses[0].email_address,
         picture: imageUrl,
       },
       path: `/profile/${id}`,
