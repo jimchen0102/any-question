@@ -5,7 +5,7 @@ import { UserFilters } from '@/constants/filters'
 import { getAllUsers } from '@/lib/actions/user.action'
 import Link from 'next/link'
 
-const page = async () => {
+const Page = async () => {
   const result = await getAllUsers({})
 
   return (
@@ -43,4 +43,4 @@ const page = async () => {
   )
 }
 
-export default page
+export default Page
