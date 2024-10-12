@@ -11,7 +11,7 @@ import { getUserById } from '@/lib/actions/user.action'
 import AllAnswers from '@/components/shared/AllAnswers'
 import Votes from '@/components/shared/Votes'
 
-const page = async ({ params, searchParams }: any) => {
+const page = async ({ params }: any) => {
   const { userId: clerkId } = auth()
 
   let mongoUser
