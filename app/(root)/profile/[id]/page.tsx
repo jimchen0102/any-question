@@ -9,6 +9,8 @@ import Link from 'next/link'
 import { getJoinedDate } from '@/lib/utils'
 import ProfileLink from '@/components/shared/ProfileLink'
 import Stats from '@/components/shared/Stats'
+import QuestionTab from '@/components/shared/QuestionTab'
+import AnswerTab from '@/components/shared/AnswerTab'
 
 const Page = async ({ params, searchParams }: URLProps) => {
   const { userId: clerkId } = auth()
@@ -77,7 +79,10 @@ const Page = async ({ params, searchParams }: URLProps) => {
         </div>
       </div>
 
-      <Stats />
+      <Stats
+        totalQuestions={userInfo.totalQuestions}
+        totalAnswers={userInfo.totalAnswers}
+      />
 
       <div className="mt-10 flex gap-10">
         <Tabs defaultValue="top-posts" className="flex-1">
@@ -89,8 +94,12 @@ const Page = async ({ params, searchParams }: URLProps) => {
               Answers
             </TabsTrigger>
           </TabsList>
-          <TabsContent value="top-posts">POSTS</TabsContent>
-          <TabsContent value="answers">ANSWERS</TabsContent>
+          <TabsContent value="top-posts">
+            <QuestionTab />
+          </TabsContent>
+          <TabsContent value="answers">
+            <AnswerTab />
+          </TabsContent>
         </Tabs>
       </div>
     </>
