@@ -3,6 +3,7 @@ import { ClerkProvider } from '@clerk/nextjs'
 import { Inter, Space_Grotesk as SpaceGrotesk } from 'next/font/google'
 import type { Metadata } from 'next'
 import { ThemeProvider } from '@/context/ThemeProvider'
+import NextTopLoader from 'nextjs-toploader'
 
 import './globals.css'
 import '../styles/prism.css'
@@ -43,6 +44,10 @@ export default function RootLayout({
             },
           }}
         >
+          <NextTopLoader
+            color="#FF7000"
+            shadow="0 0 10px #FF7000,0 0 5px #FF7000"
+          />
           <ThemeProvider>{children}</ThemeProvider>
         </ClerkProvider>
       </body>
