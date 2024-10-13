@@ -5,6 +5,7 @@ import { getTimestamp, formatAndDivideNumber } from '@/lib/utils'
 
 interface Props {
   _id: string
+  clerkId?: string | null
   title: string
   tags: {
     _id: string
@@ -23,6 +24,7 @@ interface Props {
 
 const QuestionCard = ({
   _id,
+  clerkId,
   title,
   tags,
   author,
