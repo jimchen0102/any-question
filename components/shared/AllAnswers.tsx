@@ -1,5 +1,5 @@
 import { AnswerFilters } from '@/constants/filters'
-import Filters from './Filters'
+import Filter from './Filter'
 import { getAnswers } from '@/lib/actions/answer.action'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -31,7 +31,7 @@ const AllAnswers = async ({
       <div className="flex items-center justify-between">
         <h3 className="primary-text-gradient">{totalAnswers} Answers</h3>
 
-        <Filters filters={AnswerFilters} />
+        <Filter filters={AnswerFilters} />
       </div>
 
       <div>

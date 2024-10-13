@@ -1,4 +1,4 @@
-import Filters from '@/components/shared/Filters'
+import Filter from '@/components/shared/Filter'
 import LocalSearchbar from '@/components/shared/search/LocalSearchbar'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
@@ -35,7 +35,7 @@ export default async function Home({ searchParams }: SearchParamsProps) {
           otherClasses="flex-1"
         />
 
-        <Filters
+        <Filter
           filters={HomePageFilters}
           otherClasses="min-h-[56px] sm:min-w-[170px]"
           containerClasses="hidden max-md:flex"

@@ -1,4 +1,4 @@
-import Filters from '@/components/shared/Filters'
+import Filter from '@/components/shared/Filter'
 import NoResult from '@/components/shared/NoResult'
 import LocalSearchbar from '@/components/shared/search/LocalSearchbar'
 import { TagFilters } from '@/constants/filters'
@@ -21,7 +21,7 @@ const Page = async () => {
           otherClasses="flex-1"
         />
 
-        <Filters
+        <Filter
           filters={TagFilters}
           otherClasses="min-h-[56px] sm:min-w-[170px]"
         />
