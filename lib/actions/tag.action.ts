@@ -53,13 +53,13 @@ export async function getAllTags(params: GetAllTagsParams) {
         sortOptions = { questions: -1 }
         break
       case 'recent':
-        sortOptions = { createdAt: -1 }
+        sortOptions = { createdOn: -1 }
         break
       case 'name':
         sortOptions = { name: 1 }
         break
       case 'old':
-        sortOptions = { createdAt: 1 }
+        sortOptions = { createdOn: 1 }
         break
       default:
         break
