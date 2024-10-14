@@ -16,20 +16,22 @@ const QuestionTab = async ({ searchParams, userId, clerkId }: Props) => {
 
   return (
     <>
-      {result.questions.map((question) => (
-        <QuestionCard
-          key={question._id}
-          _id={question._id}
-          clerkId={clerkId}
-          title={question.title}
-          tags={question.tags}
-          author={question.author}
-          upvotes={question.upvotes}
-          views={question.views}
-          answers={question.answers}
-          createdAt={question.createdAt}
-        />
-      ))}
+      <div className="mt-5 flex flex-col gap-6">
+        {result.questions.map((question) => (
+          <QuestionCard
+            key={question._id}
+            _id={question._id}
+            clerkId={clerkId}
+            title={question.title}
+            tags={question.tags}
+            author={question.author}
+            upvotes={question.upvotes}
+            views={question.views}
+            answers={question.answers}
+            createdAt={question.createdAt}
+          />
+        ))}
+      </div>
 
       <div className="mt-10">
         <Pagination

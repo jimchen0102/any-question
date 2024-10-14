@@ -102,6 +102,15 @@ export async function createQuestion(params: CreateQuestionParams) {
       $push: { tags: { $each: tagDocument } },
     })
 
+    await Interaction.create({
+      user: author,
+      action: 'ask_question',
+      question: question._id,
+      tags: tagDocument,
+    })
+
+    await User.findByIdAndUpdate(author, { $inc: { reputation: 5 } })
+
     revalidatePath(path)
   } catch (error) {
     console.log(error)

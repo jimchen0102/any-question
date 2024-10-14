@@ -16,17 +16,19 @@ const AnswerTab = async ({ searchParams, userId, clerkId }: Props) => {
 
   return (
     <>
-      {result.answers.map((answer) => (
-        <AnswerCard
-          key={answer._id}
-          _id={answer._id}
-          clerkId={clerkId}
-          question={answer.question}
-          author={answer.author}
-          upvotes={answer.upvotes}
-          createdAt={answer.createdAt}
-        />
-      ))}
+      <div className="mt-5 flex flex-col gap-6">
+        {result.answers.map((answer) => (
+          <AnswerCard
+            key={answer._id}
+            _id={answer._id}
+            clerkId={clerkId}
+            question={answer.question}
+            author={answer.author}
+            upvotes={answer.upvotes}
+            createdAt={answer.createdAt}
+          />
+        ))}
+      </div>
 
       <div className="mt-10">
         <Pagination
