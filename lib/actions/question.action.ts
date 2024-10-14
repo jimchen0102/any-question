@@ -215,6 +215,14 @@ export async function upvoteQuestion(params: QuestionVoteParams) {
       throw new Error('Question not found')
     }
 
+    await User.findByIdAndUpdate(userId, {
+      $inc: { reputation: hasUpvoted ? -1 : 1 },
+    })
+
+    await User.findByIdAndUpdate(question.author, {
+      $inc: { reputation: hasUpvoted ? -10 : 10 },
+    })
+
     revalidatePath(path)
   } catch (error) {
     console.log(error)
