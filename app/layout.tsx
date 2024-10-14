@@ -36,6 +36,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${spaceGrotesk.variable}`}>
+        <NextTopLoader
+          height={2}
+          color="#FF7000"
+          shadow="0 0 10px #FF7000,0 0 5px #FF7000"
+          showSpinner={false}
+        />
         <ClerkProvider
           appearance={{
             elements: {
@@ -44,10 +50,6 @@ export default function RootLayout({
             },
           }}
         >
-          <NextTopLoader
-            color="#FF7000"
-            shadow="0 0 10px #FF7000,0 0 5px #FF7000"
-          />
           <ThemeProvider>{children}</ThemeProvider>
         </ClerkProvider>
       </body>
