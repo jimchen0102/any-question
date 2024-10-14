@@ -22,7 +22,8 @@ const spaceGrotesk = SpaceGrotesk({
 
 export const metadata: Metadata = {
   title: 'AnyQuestion',
-  description: 'Ask any question',
+  description:
+    'A community-driven platform for asking and answering programming questions. Get help, share knowledge, and collaborate with developers from around the world. Explore topics in web development, mobile app development, algorithms, data structures, and more.',
   icons: {
     icon: '/assets/images/site-logo.svg',
   },

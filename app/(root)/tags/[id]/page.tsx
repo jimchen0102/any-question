@@ -5,6 +5,12 @@ import NoResult from '@/components/shared/NoResult'
 import { URLProps } from '@/types'
 import Pagination from '@/components/shared/Pagination'
 
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Tags | Any Question',
+}
+
 const Page = async ({ params, searchParams }: URLProps) => {
   const result = await getQuestionsByTagId({
     tagId: params.id,

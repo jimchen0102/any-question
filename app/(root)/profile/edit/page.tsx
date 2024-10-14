@@ -3,6 +3,12 @@ import { ParamsProps } from '@/types'
 import { auth } from '@clerk/nextjs/server'
 import Profile from '@/components/forms/Profile'
 
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Edit profile | Any Question',
+}
+
 const Page = async ({ params }: ParamsProps) => {
   const { userId } = auth()
 

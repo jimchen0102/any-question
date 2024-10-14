@@ -12,6 +12,12 @@ import Stats from '@/components/shared/Stats'
 import QuestionTab from '@/components/shared/QuestionTab'
 import AnswerTab from '@/components/shared/AnswerTab'
 
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Profile | Any Question',
+}
+
 const Page = async ({ params, searchParams }: URLProps) => {
   const { userId: clerkId } = auth()
   const userInfo = await getUserInfo({ userId: params.id })
