@@ -25,9 +25,6 @@ interface StatsProps {
 }
 
 const Stats = ({ totalQuestions, totalAnswers }: StatsProps) => {
-  console.log('totalQuestions', totalQuestions)
-  console.log('totalAnswers', totalAnswers)
-
   return (
     <div className="mt-10">
       <h4 className="h3-semibold text-dark200_light900">Stats</h4>
