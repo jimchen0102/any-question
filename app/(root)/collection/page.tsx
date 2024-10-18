@@ -1,12 +1,14 @@
+import { auth } from '@clerk/nextjs/server'
+import { getSavedQuestions } from '@/lib/actions/user.action'
+import { QuestionFilters } from '@/constants/filters'
+
 import Filter from '@/components/shared/Filter'
 import LocalSearchbar from '@/components/shared/search/LocalSearchbar'
-import { QuestionFilters } from '@/constants/filters'
 import NoResult from '@/components/shared/NoResult'
-import QuestionCard from '@/components/cards/QuestionCard'
-import { getSavedQuestions } from '@/lib/actions/user.action'
-import { auth } from '@clerk/nextjs/server'
-import { SearchParamsProps } from '@/types'
 import Pagination from '@/components/shared/Pagination'
+import QuestionCard from '@/components/cards/QuestionCard'
+
+import { SearchParamsProps } from '@/types'
 
 import type { Metadata } from 'next'
 

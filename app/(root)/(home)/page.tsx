@@ -1,18 +1,21 @@
-import Filter from '@/components/shared/Filter'
-import LocalSearchbar from '@/components/shared/search/LocalSearchbar'
-import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import { HomePageFilters } from '@/constants/filters'
-import HomeFilters from '@/components/home/HomeFilters'
-import NoResult from '@/components/shared/NoResult'
-import QuestionCard from '@/components/cards/QuestionCard'
+import { auth } from '@clerk/nextjs/server'
+
 import {
   getQuestions,
   getRecommendedQuestions,
 } from '@/lib/actions/question.action'
-import { SearchParamsProps } from '@/types'
+import { HomePageFilters } from '@/constants/filters'
+
+import { Button } from '@/components/ui/button'
+import HomeFilters from '@/components/home/HomeFilters'
+import Filter from '@/components/shared/Filter'
+import LocalSearchbar from '@/components/shared/search/LocalSearchbar'
+import NoResult from '@/components/shared/NoResult'
 import Pagination from '@/components/shared/Pagination'
-import { auth } from '@clerk/nextjs/server'
+import QuestionCard from '@/components/cards/QuestionCard'
+
+import { SearchParamsProps } from '@/types'
 
 import type { Metadata } from 'next'
 

@@ -1,11 +1,13 @@
+import Link from 'next/link'
+import { getAllTags } from '@/lib/actions/tag.action'
+import { TagFilters } from '@/constants/filters'
+
 import Filter from '@/components/shared/Filter'
 import NoResult from '@/components/shared/NoResult'
 import Pagination from '@/components/shared/Pagination'
 import LocalSearchbar from '@/components/shared/search/LocalSearchbar'
-import { TagFilters } from '@/constants/filters'
-import { getAllTags } from '@/lib/actions/tag.action'
+
 import { SearchParamsProps } from '@/types'
-import Link from 'next/link'
 
 import type { Metadata } from 'next'
 

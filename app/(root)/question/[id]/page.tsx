@@ -1,15 +1,16 @@
-import { getQuestionById } from '@/lib/actions/question.action'
-import Image from 'next/image'
 import Link from 'next/link'
-import Metric from '@/components/shared/Metric'
-import { getTimestamp, formatAndDivideNumber } from '@/lib/utils'
-import ParseHTML from '@/components/shared/ParseHTML'
-import RenderTag from '@/components/shared/RenderTag'
-import Answer from '@/components/forms/Answer'
+import Image from 'next/image'
 import { auth } from '@clerk/nextjs/server'
 import { getUserById } from '@/lib/actions/user.action'
+import { getQuestionById } from '@/lib/actions/question.action'
+import { getTimestamp, formatAndDivideNumber } from '@/lib/utils'
+
+import Metric from '@/components/shared/Metric'
+import ParseHTML from '@/components/shared/ParseHTML'
+import RenderTag from '@/components/shared/RenderTag'
 import AllAnswers from '@/components/shared/AllAnswers'
 import Votes from '@/components/shared/Votes'
+import Answer from '@/components/forms/Answer'
 
 import type { Metadata } from 'next'
 

@@ -1,16 +1,18 @@
-import { Button } from '@/components/ui/button'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { getUserInfo } from '@/lib/actions/user.action'
-import { URLProps } from '@/types'
+import Link from 'next/link'
+import Image from 'next/image'
 import { SignedIn } from '@clerk/nextjs'
 import { auth } from '@clerk/nextjs/server'
-import Image from 'next/image'
-import Link from 'next/link'
+import { getUserInfo } from '@/lib/actions/user.action'
 import { getJoinedDate } from '@/lib/utils'
+
+import { Button } from '@/components/ui/button'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import ProfileLink from '@/components/shared/ProfileLink'
 import Stats from '@/components/shared/Stats'
 import QuestionTab from '@/components/shared/QuestionTab'
 import AnswerTab from '@/components/shared/AnswerTab'
+
+import { URLProps } from '@/types'
 
 import type { Metadata } from 'next'
 
